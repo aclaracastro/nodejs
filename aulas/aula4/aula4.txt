@@ -1,0 +1,5 @@
+buffer -> tipo de objeto usado pra representar uma sequencia fixa de bytes (controle de alocação de memoria)
+
+buffering -> forma de pre carregar e armazenar uma parte de um arquivo de midia em um buffer ou na memoria temporaria de um dispositivo (ex: quando tem a barrinha de um video no yt e aparece que so um pouco do video ja foi "carregado", isso ta alocando uma memoria pra conseguir ver o video)
+
+stream -> interface abstrata para lidar com fluxo contínuo de dados (a ideia é processar um fluxo de dados por partes, ou data chunks, a partir de uma conexão estabelecida, e.g. uma requisição http) 

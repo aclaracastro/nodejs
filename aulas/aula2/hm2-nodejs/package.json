@@ -1,0 +1,14 @@
+{
+  "name": "hm2-nodejs",
+  "version": "1.0.0",
+  "description": "dever de casa 2",
+  "main": "index.js",
+  "scripts": {
+    "testes":"jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^30.0.2"
+  }
+}

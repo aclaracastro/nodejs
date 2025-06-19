@@ -1,0 +1,15 @@
+O Observer Pattern (Padrão Observador) é um padrão de design comportamental que permite que um objeto (chamado "subject") mantenha uma lista de seus dependentes (chamados "observers") e os notifique automaticamente sobre qualquer mudança de estado.
+
+Como funciona
+Subject: Mantém uma lista de observers e fornece métodos para adicionar/remover observers.
+
+Observers: São objetos que desejam ser notificados quando o subject muda.
+
+Vantagens
+Acoplamento fraco entre subject e observers
+
+Fácil adição/remoção de observers em tempo de execução
+
+Suporte a broadcast de notificações
+
+O padrão Observer é amplamente usado em interfaces de usuário, sistemas de eventos e arquiteturas reativas.

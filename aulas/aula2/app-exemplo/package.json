@@ -1,0 +1,17 @@
+{
+  "author": "ana",
+  "license": "ISC",
+  "name": "app-exemplo",
+  "version": "1.0.0",
+  "description": "app exemplo nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index.js",
+    "cmd1": "node contador.js"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.7",
+    "input-is": "^2.1.1"
+  }
+}

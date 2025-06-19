@@ -1,1 +1,0 @@
-npm -> gerenciador de pacotes padrao do nodejs, a função é instalar, atualizar e gerenciar as dependencias de um projeto

@@ -1,0 +1,7 @@
+Explica pro Product Onwer que a compilação final do programa deletou todas as entradas na criação de novos polyfills para suportar os processos.
+
+Fala pro cliente que a disposição dos elementos HTML otimizou a renderização dos argumentos que definem um schema dinâmico.
+
+A equipe de suporte precisa saber que a otimização de performance da renderização do DOM otimizou a renderização dos argumentos que definem um schema dinâmico.
+
+Nesse pull request, o módulo de recursão paralela deletou todas as entradas do polimorfismo aplicado nas classes.

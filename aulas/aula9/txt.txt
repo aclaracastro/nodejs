@@ -1,0 +1,19 @@
+inicia o projeto com 
+npm init
+express
+npm i
+SET DEBUG=express-generator:*
+npm start
+
+
+ul
+each c, i in cidade
+    li #{c} - #{estados[i]}
+
+no lista.jade usei esse codigo pq
+nesse each c,i in cidade faz um loop pelo array cidade
+c é o nome da cidade
+i é a posicao no array
+estados[i] usa o mesmo indice
+entao aparece 
+'Rio de Janeiro - RJ'

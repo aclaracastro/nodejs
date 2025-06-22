@@ -1,0 +1,32 @@
+[
+  {
+    "codigo": 1,
+    "nome": "João Silva",
+    "email": "joao@email.com",
+    "nascimento": "1990-05-15"
+  },
+  {
+    "codigo": 2,
+    "nome": "Maria Souza",
+    "email": "maria@email.com",
+    "nascimento": "1985-08-22"
+  },
+  {
+    "codigo": 3,
+    "nome": "Carlos Oliveira",
+    "email": "carlos@email.com",
+    "nascimento": "1978-11-30"
+  },
+  {
+    "codigo": 4,
+    "nome": "Ana Pereira",
+    "email": "ana@email.com",
+    "nascimento": "1992-03-10"
+  },
+  {
+    "codigo": 5,
+    "nome": "Pedro Costa",
+    "email": "pedro@email.com",
+    "nascimento": "1982-07-18"
+  }
+]

@@ -1,0 +1,21 @@
+*cria a pasta express-generator
+mkdir express-generator
+cd express-generator
+
+*fez o init do json
+npm init
+
+*fez a instalaçao do express-generator
+npm install -g express-generator  //global
+
+*utiliza pra melhorar o desempenho
+express (mostra as rotas do projeto e todas as pastas que fazem parte do projeto)
+
+*instala todas as dependencias
+npm i || npm install
+
+*antes de rodar o npm start
+SET DEBUG=express-generator:*
+
+*rodar o projeto 
+npm start //da pra ver la no json roda no localhost 3000

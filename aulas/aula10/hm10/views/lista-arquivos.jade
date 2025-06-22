@@ -1,0 +1,8 @@
+extends layout 
+
+block content 
+    h1= title  
+    ul  
+        each item in arr_arquivos 
+            li 
+                a(href=`/arquivo/${item.id}`) #{item.nome}

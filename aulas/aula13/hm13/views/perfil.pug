@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Perfil do Usuário
+  div.card
+    div.card-body
+      if usuario.foto
+        img.img-thumbnail.mb-3(src=usuario.foto alt="Foto do usuário" width="200")
+      else
+        p.alert.alert-warning Sem foto de perfil
+      h4.card-title Nome: #{usuario.nome}
+      p.card-text E-mail: #{usuario.email}
+      a.btn.btn-danger(href="/login") Sair

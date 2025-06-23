@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  .container.mt-5
+    if postagem
+      .card.mb-4
+        .card-body
+          h1.card-title= postagem.titulo
+          h6.card-subtitle.mb-2.text-muted 
+            | Postado em #{new Date(postagem.dt_cadastro).toLocaleDateString('pt-BR')} 
+            if postagem.autor_nome
+              | por #{postagem.autor_nome}
+          p.card-text(style="white-space: pre-line")= postagem.descricao
+          
+          if usuario && (usuario.id === postagem.autor_id || usuario.eAdmin)
+            .mt-4
+              a.btn.btn-primary(href=`/postagens/editar/${postagem.id}`) Editar
+              | 
+              a.btn.btn-danger.ml-2(href=`/postagens/excluir/${postagem.id}`) Excluir
+
+      // Seção de Comentários
+      .card.mb-4
+        .card-header
+          h5 Comentários
+        .card-body
+          if comentarios && comentarios.length > 0
+            each comentario in comentarios
+              .mb-3
+                .d-flex.justify-content-between
+                  strong= comentario.autor_nome || 'Anônimo'
+                  small.text-muted= new Date(comentario.dt_cadastro).toLocaleDateString('pt-BR')
+                p(style="white-space: pre-line")= comentario.conteudo
+          else
+            p Nenhum comentário ainda. Seja o primeiro a comentar!
+
+            form(method="POST" action=`/comentarios/novo/${postagem.id}`)
+              .form-group
+                textarea.form-control(name="conteudo" rows="3" required placeholder="Digite seu comentário...")
+              button.btn.btn-primary(type="submit") Enviar Comentário
+
+    else
+      .alert.alert-danger Postagem não encontrada
+    
+    a.btn.btn-secondary.mt-3(href="/verPostagens") Voltar para todas as postagens

@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  h1 Detalhes do Usuário
+  
+  div
+    p Nome: #{usuario.nome}
+    p E-mail: #{usuario.email}
+    p Data de Cadastro: #{usuario.dt_cadastro.toLocaleString()}
+    p Status: #{usuario.ativo ? 'Ativo' : 'Inativo'}
+  
+  a(href='/') Voltar

@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header
+      h1 Blog App
+
+      if typeof session !== 'undefined' && !session.usuario
+        a(href="/login") Login
+      else if typeof session !== 'undefined' && session.usuario
+        span Olá, #{session.usuario.nome}
+        a(href="/logout") Sair
+
+      nav
+        ul
+          li
+            a(href='/') Home
+          li 
+            a(href='/verPostagens') Postagens
+          li 
+            a(href='/usuario/create') Novo Usuário
+          li
+            a(href='/postagem/create') Nova Postagem
+          li
+            a(href='/comentario/create') Novo Comentário
+
+    main
+      block content

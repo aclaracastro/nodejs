@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+  h1= postagem.titulo
+  
+  div
+    p Autor: #{usuario.nome}
+    p Data: #{postagem.dt_cadastro.toLocaleString()}
+    p= postagem.descricao
+
+  .postagem-completa
+  h1= postagem.titulo
+  
+  if postagem.foto
+    .imagem-container
+      img.imagem-postagem(
+        src=postagem.foto
+        alt=`Imagem: ${postagem.titulo}`
+        style="max-width: 100%; border-radius: 8px; margin: 20px 0;"
+      )
+  
+  p= postagem.descricao
+  
+  h2 Comentários
+  if comentarios.length > 0
+    each comentario in comentarios
+      div.comentario
+        p #{comentario.usuario_nome} disse:
+        p= comentario.descricao
+        p Data: #{comentario.dt_cadastro.toLocaleString()}
+  else
+    p Nenhum comentário ainda.
+  
+  a(href='/comentario/create?postagem=' + postagem.id) Adicionar Comentário
+  br
+  a(href='/') Voltar

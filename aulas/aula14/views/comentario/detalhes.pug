@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  h1 Detalhes do Comentário
+  
+  div
+    p Usuário: #{usuario.nome}
+    p Postagem: #{postagem.titulo}
+    p Data: #{comentario.dt_cadastro.toLocaleString()}
+    p= comentario.descricao
+  
+  a(href='/postagem/' + postagem.id) Ver Postagem
+  br
+  a(href='/') Voltar

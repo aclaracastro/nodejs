@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  h1 Adicionar Comentário
+  
+  if errors
+    ul
+      each error in errors
+        li= error.msg
+  
+  form(method='POST' action='/comentario/create')
+    div
+      label(for='descricao') Comentário:
+      textarea(id='descricao' name='descricao' required)
+    div
+      label(for='cod_usuario') Usuário:
+      select(id='cod_usuario' name='cod_usuario' required)
+        each usuario in usuarios
+          option(value=usuario.id)= usuario.nome
+    div
+      label(for='cod_postagem') Postagem:
+      select(id='cod_postagem' name='cod_postagem' required)
+        each postagem in postagens
+          option(value=postagem.id)= postagem.titulo
+    button(type='submit') Adicionar Comentário

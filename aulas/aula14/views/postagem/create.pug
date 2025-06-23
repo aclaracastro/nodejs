@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  h1 Criar Nova Postagem
+  
+  if errors
+    ul
+      each error in errors
+        li= error.msg
+  
+  form(method='POST' action='/postagem/create' enctype="multipart/form-data")
+    div
+      label(for='titulo') Título:
+      input(type='text' id='titulo' name='titulo' required)
+    div
+      label(for='descricao') Descrição:
+      textarea(id='descricao' name='descricao' required)
+    div 
+      input(type="file" name="foto_postagem" accept="image/jpeg, image/png")
+    div
+      label(for='cod_usuario') Autor:
+      select(id='cod_usuario' name='cod_usuario' required)
+        each usuario in usuarios
+          option(value=usuario.id)= usuario.nome
+    button(type='submit') Criar Postagem

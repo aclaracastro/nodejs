@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .container.mt-5
+    h1.mb-4 Todas as Postagens
+    
+    if postagens && postagens.length > 0
+      each postagem in postagens
+        .card.mb-4
+          .card-body
+            h2.card-title= postagem.titulo
+            h6.card-subtitle.mb-2.text-muted 
+              | Postado em #{new Date(postagem.dt_cadastro).toLocaleDateString('pt-BR')} 
+              if postagem.autor_nome
+                | por #{postagem.autor_nome}
+            p.card-text= postagem.descricao.substring(0, 100) + (postagem.descricao.length > 100 ? '...' : '')
+            a.btn.btn-primary(href=`/verPostagens/${postagem.id}`) Ler mais
+    else
+      .alert.alert-info Nenhuma postagem encontrada.
+    
+
+      

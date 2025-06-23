@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  h1 Cadastrar Novo Usuário
+  
+  if errors
+    ul
+      each error in errors
+        li= error.msg
+  
+  form(method='POST' action='/usuario/create')
+    div
+      label(for='nome') Nome:
+      input(type='text' id='nome' name='nome' required)
+    div
+      label(for='email') E-mail:
+      input(type='email' id='email' name='email' required)
+    div
+      label(for='senha') Senha:
+      input(type='password' id='senha' name='senha' required minlength='6')
+    button(type='submit') Cadastrar

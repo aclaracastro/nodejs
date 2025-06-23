@@ -1,0 +1,63 @@
+extends layout
+
+block content
+  .container.mt-1
+    h1.mb-4.text-center= title
+
+    .card.text-dark.mx-auto.shadow.rounded(style="max-width: 500px;")
+      .card-body
+
+        form(action="/cadastro" method="POST")
+          .mb-3
+            label.form-label(for="nome") Nome:
+            input.form-control.bg-white.text-dark.border.border-dark.rounded-pill(
+              type="text"
+              name="nome"
+              placeholder="Digite seu nome"
+              required
+            )
+
+          .mb-3
+            label.form-label(for="email") E-mail:
+            input.form-control.bg-white.text-dark.border.border-dark.rounded-pill(
+              type="email"
+              name="email"
+              placeholder="seuemail@email.com"
+              required
+            )
+
+          .mb-3
+            label.form-label(for="peso") Peso (kg):
+            input.form-control.bg-white.text-dark.border.border-dark.rounded-pill(
+              type="number"
+              name="peso"
+              placeholder="Ex: 63.5"
+              required
+            )
+
+          .mb-3
+            label.form-label(for="altura") Altura (m):
+            input.form-control.bg-white.text-dark.border.border-dark.rounded-pill(
+              type="number"
+              name="altura"
+              placeholder="Ex: 1.65"
+              required
+            )
+
+          .d-flex.justify-content-between.mt-4
+            button.btn.btn-outline-info.px-4.rounded-pill(type="submit") ✅ Cadastrar
+            
+
+    .d-flex.justify-content-between.mt-3
+      a.btn.btn-secondary.mt-3(href="/") 🏠 Home 
+      a.btn.btn-outline-info(href='/users') 🔍 Ver Lista de Usuários
+
+    if typeof verificacao !== 'undefined'
+      if verificacao
+        .alert.alert-success.d-flex.align-items-center.justify-content-center.text-center.fw-semibold.mt-4(role="alert")
+          i.bi.bi-check-circle-fill.me-2
+          | ✅ #{message}
+      else
+        .alert.alert-danger.d-flex.align-items-center.justify-content-center.text-center.fw-semibold.mt-4(role="alert")
+          i.bi.bi-exclamation-triangle-fill.me-2
+          | ❌ #{message}

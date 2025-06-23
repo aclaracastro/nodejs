@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  .container.mt-5
+    h1.mb-4= title
+
+    if usuarios && usuarios.length > 0
+      table.table.table-striped.table-hover
+        thead
+          tr
+            th ID
+            th Nome
+            th E-mail
+            th Ações
+        tbody
+          each usuario in usuarios
+            tr
+              td= usuario.id
+              td= usuario.nome
+              td= usuario.email
+              td
+                a.btn.btn-info.btn-sm(href=`/user/${usuario.id}`) Ver Detalhes
+    else
+      p Nenhum usuário cadastrado ainda.
+
+    a.btn.btn-secondary.mt-3(href="/") 🏠 Home 

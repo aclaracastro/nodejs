@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  ul 
+    each item in arr_clientes
+      li
+        p #{item.nome} - #{item.valor}

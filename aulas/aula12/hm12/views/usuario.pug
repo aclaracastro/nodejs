@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1 Dados do Usuário: #{usuario.nome}
+
+  div
+    p
+      strong Nome:
+      |  #{usuario.nome}
+    p
+      strong E-mail:
+      |  #{usuario.email}
+    p
+      strong Peso:
+      |  #{usuario.peso} kg
+    p
+      strong Altura:
+      |  #{usuario.altura} cm
+    p
+      strong IMC:
+      |  #{imc}
+
+  a(href="/users") Voltar

@@ -1,0 +1,4 @@
+mkdir exemplo-bd
+cd exemplo-bd
+express --view=pug
+npm i

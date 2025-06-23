@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .container.mt-5.bg-ligth.text-dark.p-4.rounded.shadow
+    h1.text-center.mb-4.text-info 🏠 Home
+    h5.text-center.mb-4.text-secondary 👋 Bem-vindo ao Sistema de Gerenciamento de Usuários
+    br
+    .mb-4
+      p.text-center 
+        | Clique em um dos botões abaixo para acessar os serviços!
+      br
+
+
+    .d-flex.justify-content-center.gap-3.mb-4
+      a.btn.btn-outline-info(href='/cadastro') ✏️ Cadastrar Usuário
+      a.btn.btn-outline-info(href='/users') 🔍 Ver Lista de Usuários
+
+    if verificacao
+      p.text-success.fw-semibold.mb-4.text-center
+        | ✅ Conectado ao banco de dados com sucesso.
+    else
+      p.text-danger.fw-semibold.mb-4.text-center
+        | ⛔ Erro ao conectar no banco de dados.
